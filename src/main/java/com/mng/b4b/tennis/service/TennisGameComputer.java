@@ -48,8 +48,8 @@ public class TennisGameComputer {
             } else if (previousPoint.getAScore() == 40 && previousPoint.getBScore() == 40) {
                 builder.AAdvantage(true);
             } else {
-                int newScore = incrementScore(previousPoint.getAScore());
-                builder.AScore(newScore).winner(newScore > 40 ? Player.A : null);
+                builder.AScore(incrementScore(previousPoint.getAScore()))
+                        .winner(previousPoint.getAScore() == 40 ? Player.A : null);
             }
         } else if (player == Player.B) {
             if (previousPoint.isBAdvantage()) {
@@ -59,8 +59,8 @@ public class TennisGameComputer {
             } else if (previousPoint.getAScore() == 40 && previousPoint.getBScore() == 40) {
                 builder.BAdvantage(true);
             } else {
-                int newScore = incrementScore(previousPoint.getBScore());
-                builder.BScore(newScore).winner(newScore > 40 ? Player.B : null);
+                builder.BScore(incrementScore(previousPoint.getBScore()))
+                        .winner(previousPoint.getBScore() == 40 ? Player.B : null);
             }
         }
 
@@ -80,7 +80,6 @@ public class TennisGameComputer {
             case 0 -> 15;
             case 15 -> 30;
             case 30 -> 40;
-            case 40 -> 41;
             default -> currentScore;
         };
     }

@@ -60,17 +60,17 @@ class TennisGameComputerTest {
                         previousPoint.toBuilder().AScore(30).BScore(15).build(),
                         previousPoint.toBuilder().AScore(30).BScore(30).build(),
                         previousPoint.toBuilder().AScore(40).BScore(30).build(),
-                        previousPoint.toBuilder().AScore(41).BScore(30).winner(A).build())),
+                        previousPoint.toBuilder().AScore(40).BScore(30).winner(A).build())),
                 Arguments.of(List.of(A,A,A,A), List.of(
                         previousPoint.toBuilder().AScore(15).build(),
                         previousPoint.toBuilder().AScore(30).build(),
                         previousPoint.toBuilder().AScore(40).build(),
-                        previousPoint.toBuilder().AScore(41).winner(A).build())),
+                        previousPoint.toBuilder().AScore(40).winner(A).build())),
                 Arguments.of(List.of(B,B,B,B), List.of(
                         previousPoint.toBuilder().BScore(15).build(),
                         previousPoint.toBuilder().BScore(30).build(),
                         previousPoint.toBuilder().BScore(40).build(),
-                        previousPoint.toBuilder().BScore(41).winner(Player.B).build())),
+                        previousPoint.toBuilder().BScore(40).winner(Player.B).build())),
                 Arguments.of(List.of(A,B,A,B,A,B,A,B,A,A), List.of(
                         previousPoint.toBuilder().AScore(15).build(),
                         previousPoint.toBuilder().AScore(15).BScore(15).build(),
